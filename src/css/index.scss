@@ -1,0 +1,29 @@
+@import "variables";
+@import "loader";
+@import "hero";
+@import "nav";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-base;
+  font-family: "Roboto", sans-serif;
+  color: $cl-dark;
+  background-color: $cl-gray-light;
+}
