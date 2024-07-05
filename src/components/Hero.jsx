@@ -1,3 +1,5 @@
+import Image from "./Image";
+
 function Hero() {
   return (
     <section className="hero">
@@ -8,12 +10,13 @@ function Hero() {
         STUDIO RECUPERARE MEDICALĂ, PILATES PRE ȘI POST-NATAL, PILATES CLINIC,
         PEAK PILATES
       </p>
-      <img
+
+      <Image
         className="hero__img hero__img--1"
         src="./assets/images/img2.jpeg"
         alt="Pilates Studio"
       />
-      <img
+      <Image
         className="hero__img hero__img--2"
         src="./assets/images/img9.jpeg"
         alt="Pilates Studio"

@@ -1,0 +1,66 @@
+.plan {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+  background: $cl-white;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  transform: translateY(20%);
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+  &.slideInFromBottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__step {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    &--section {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &--number {
+      position: absolute;
+      bottom: -5rem;
+      left: -5rem;
+      font-size: 10rem;
+      color: $cl-gray-light;
+      z-index: 1;
+      font-family: "Italiano";
+    }
+
+    &.even {
+      flex-direction: row-reverse;
+    }
+
+    &--heading {
+      font-family: "Italiano";
+      z-index: 2;
+    }
+
+    &--img img {
+      position: relative;
+      width: 20rem;
+      height: auto;
+      z-index: 2;
+    }
+
+    &--text {
+      width: 30%;
+      line-height: 1.2;
+      letter-spacing: 0.8px;
+    }
+  }
+}

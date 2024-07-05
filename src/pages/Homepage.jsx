@@ -1,15 +1,18 @@
-import { useNavigation } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import Loader from "../components/Loader";
-import Hero from "../components/Hero";
+
+const Hero = lazy(() => import("../components/Hero"));
+const Plan = lazy(() => import("../components/Plan"));
 
 function Homepage() {
-  const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
-
   return (
     <div>
-      {isLoading && <Loader />}
-      <Hero />
+      <Suspense fallback={<Loader />}>
+        <Hero />
+      </Suspense>
+      <Suspense fallback={<Loader />}>
+        <Plan />
+      </Suspense>
     </div>
   );
 }
