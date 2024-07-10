@@ -4,7 +4,10 @@ function Nav() {
   return (
     <nav className="nav">
       <button className="nav__home">
-        <Image className="nav__home--img" src="/assets/images/logo.jpeg" />
+        <Image
+          className="nav__home--img"
+          src="/assets/images/logo-transparent.png"
+        />
       </button>
 
       <button className="nav__menu">
