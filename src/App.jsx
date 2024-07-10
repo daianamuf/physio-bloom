@@ -6,6 +6,10 @@ import Error from "./components/Error";
 import Loader from "./components/Loader";
 
 const Homepage = lazy(() => import("./pages/Homepage"));
+const About = lazy(() => import("./pages/About"));
+const Prices = lazy(() => import("./pages/Prices"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Blog = lazy(() => import("./pages/Blog"));
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,38 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <Homepage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/despre",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/tarife",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Prices />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/blog",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Blog />
           </Suspense>
         ),
       },
