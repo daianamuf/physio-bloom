@@ -241,10 +241,10 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  transform: translateX(20%);
-  transition: all 0.3s ease;
+  transform: translateX(-20%);
+  transition: all 1s ease;
 }
-.footer__content--group .slideFromLeft {
+.footer__content--group.slideFromLeft {
   opacity: 1;
   transform: translateX(0);
 }
@@ -259,6 +259,7 @@
 }
 .footer__content--adress {
   gap: 0.5rem;
+  transition-delay: 1s;
 }
 .footer__content--adress ion-icon {
   font-size: 3.2rem;
@@ -266,6 +267,7 @@
 .footer__content--socials {
   gap: 1.2rem;
   align-self: center;
+  transition-delay: 2s;
 }
 .footer__content--copyright {
   position: absolute;
@@ -286,6 +288,13 @@
 }
 .footer__image {
   grid-row: 1/2;
+  opacity: 0;
+  transform: translateX(20%);
+  transition: all 2s ease;
+}
+.footer__image.slideFromRight {
+  opacity: 1;
+  transform: translateX(0);
 }
 .footer__image img {
   width: 100%;

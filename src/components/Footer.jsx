@@ -4,7 +4,7 @@ import Image from "./Image";
 function Footer() {
   const { elementRef, isVisible } = useElementIntersectionObserver({
     root: null,
-    treshold: 0.3,
+    treshold: 0.5,
   });
 
   return (
@@ -56,7 +56,7 @@ function Footer() {
             ></ion-icon>
           </a>
         </div>
-        <div className="footer__content--group footer__content--copyright">
+        <div className=" footer__content--copyright">
           <p>© Copyright 2024 - Physio Bloom Studio</p>
         </div>
       </section>

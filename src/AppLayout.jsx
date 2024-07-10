@@ -1,10 +1,10 @@
 import { Outlet, useNavigation } from "react-router-dom";
-
-import Loader from "./components/Loader";
-import Footer from "./components/Footer";
 import { Suspense, lazy } from "react";
 
+import Loader from "./components/Loader";
+
 const Nav = lazy(() => import("./components/Nav"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function AppLayout() {
   const navigation = useNavigation;
@@ -21,7 +21,9 @@ function AppLayout() {
         <Outlet />
       </main>
 
-      <Footer />
+      <Suspense fallback={<Loader />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
