@@ -49,12 +49,20 @@ function Nav() {
               </Link>
             </li>
             <li className="navigation__item">
-              <Link to={"/contact"} className="navigation__link">
+              <Link
+                to={"/contact"}
+                className="navigation__link"
+                onClick={closeMenu}
+              >
                 <span>03</span>Contact
               </Link>
             </li>
             <li className="navigation__item">
-              <Link to={"/blog"} className="navigation__link">
+              <Link
+                to={"/blog"}
+                className="navigation__link"
+                onClick={closeMenu}
+              >
                 <span>04</span>Blog
               </Link>
             </li>

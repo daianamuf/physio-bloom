@@ -439,9 +439,70 @@
   height: 50rem;
   background: url("/assets/images/hero-contact.png");
   background-size: contain;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .contact__data {
+  margin-top: 10rem;
+  height: 40rem;
+}
+
+.about {
+  width: 100%;
+}
+.about__hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 50rem;
+  background: url("/assets/images/hero-about.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.about__data {
+  margin-top: 10rem;
+  height: 40rem;
+}
+
+.prices {
+  width: 100%;
+}
+.prices__hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 50rem;
+  background: url("/assets/images/hero-prices.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.prices__data {
+  margin-top: 10rem;
+  height: 40rem;
+}
+
+.blog {
+  width: 100%;
+}
+.blog__hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 50rem;
+  background: url("/assets/images/hero-blog.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.blog__data {
   margin-top: 10rem;
   height: 40rem;
 }
