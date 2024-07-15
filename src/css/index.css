@@ -443,8 +443,71 @@
   background-attachment: fixed;
 }
 .contact__data {
-  margin-top: 10rem;
-  height: 40rem;
+  margin: 0 auto;
+  margin-top: 40rem;
+  margin-bottom: 10rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-family: "Italiano";
+}
+.contact__form {
+  margin-bottom: 10rem;
+  border-radius: 12px;
+  width: 100%;
+  padding: 6rem 4rem;
+  background: #efebe7;
+  display: flex;
+  flex-direction: column;
+  color: #726e69;
+}
+.contact__form--heading {
+  font-family: "Italiano";
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+.contact__form--label {
+  margin-bottom: 0.6rem;
+}
+.contact__form--input {
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: "Roboto";
+  font-size: 1.8rem;
+  color: #726e69;
+  background: #ffffff;
+}
+.contact__form--input:focus {
+  outline: 1px solid #7f7a75;
+  background: #ffffff;
+}
+.contact__form--btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 1rem 0rem;
+  font-size: 1.8rem;
+  font-family: "Roboto";
+  background: #b48d73;
+  color: #efebe7;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #7f7a75 50%);
+  background-size: 220%;
+  border-radius: 10px;
+  transition: all 0.8s;
+}
+.contact__form--btn:hover {
+  background-position: 100%;
+  color: #ffffff;
+  transform: translateX(1rem);
 }
 
 .about {
@@ -584,4 +647,17 @@ body {
   background-position: 100%;
   color: #b48d73;
   transform: translateX(1rem);
+}
+
+.error-message {
+  font-size: 1.6rem;
+  margin-left: 2rem;
+  color: #b48d73;
+}
+
+.submission-message {
+  margin-top: 3rem;
+  text-align: center;
+  color: #b48d73;
+  font-weight: 600;
 }/*# sourceMappingURL=index.css.map */

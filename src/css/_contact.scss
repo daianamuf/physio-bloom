@@ -15,7 +15,83 @@
   }
 
   &__data {
-    margin-top: 10rem;
-    height: 40rem;
+    margin: 0 auto;
+    margin-top: 40rem;
+    margin-bottom: 10rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    color: $cl-white;
+    text-align: center;
+    font-size: $font-medium;
+    letter-spacing: 1px;
+    font-family: "Italiano";
+  }
+
+  &__form {
+    margin-bottom: 10rem;
+    border-radius: 12px;
+    width: 100%;
+    padding: 6rem 4rem;
+    background: $cl-gray-light-2;
+    display: flex;
+    flex-direction: column;
+    color: $cl-gray-dark-2;
+
+    &--heading {
+      font-family: "Italiano";
+      margin-bottom: 2rem;
+      font-size: $font-medium;
+    }
+
+    &--label {
+      margin-bottom: 0.6rem;
+    }
+
+    &--input {
+      margin-bottom: 2rem;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: "Roboto";
+      font-size: $font-base;
+      color: $cl-gray-dark-2;
+      background: $cl-white;
+
+      &:focus {
+        outline: 1px solid $cl-gray-dark;
+        background: $cl-white;
+      }
+    }
+
+    &--btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 2rem;
+      padding: 1rem 0rem;
+      font-size: $font-base;
+      font-family: "Roboto";
+      background: $cl-accent;
+      color: $cl-gray-light-2;
+
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $cl-gray-dark 50%
+      );
+      background-size: 220%;
+      border-radius: 10px;
+      transition: all 0.8s;
+
+      &:hover {
+        background-position: 100%;
+        color: $cl-white;
+        transform: translateX(1rem);
+      }
+    }
   }
 }

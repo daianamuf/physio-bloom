@@ -96,3 +96,16 @@ body {
     }
   }
 }
+
+.error-message {
+  font-size: $font-small;
+  margin-left: 2rem;
+  color: $cl-accent;
+}
+
+.submission-message {
+  margin-top: 3rem;
+  text-align: center;
+  color: $cl-accent;
+  font-weight: 600;
+}
