@@ -160,7 +160,7 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -20%;
   z-index: 1500;
   opacity: 0;
   width: 0;
@@ -205,7 +205,7 @@
 }
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
-  width: 100%;
+  width: 140%;
 }
 .navigation__icon {
   position: relative;
@@ -286,7 +286,7 @@
   gap: 4rem;
   align-items: center;
   background: #ffffff;
-  padding-top: 2rem;
+  padding-top: 6rem;
   padding-bottom: 5rem;
   transform: translateY(20%);
   opacity: 0;
@@ -334,6 +334,27 @@
   width: 30%;
   line-height: 1.2;
   letter-spacing: 0.8px;
+}
+.plan__btn {
+  margin-top: 6rem;
+  background: #b48d73;
+  padding: 2rem;
+  text-decoration: none;
+  border-radius: 10px;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #dfd6ce 50%);
+  background-size: 220%;
+  border-radius: 10px;
+  transition: all 0.8s;
+}
+.plan__btn:hover {
+  background-position: 100%;
+  color: #ffffff;
+  transform: translateX(1rem);
+}
+.plan__btn span {
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .footer {
@@ -429,6 +450,9 @@
 
 .contact {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contact__hero {
   position: absolute;
@@ -447,18 +471,25 @@
   margin-top: 40rem;
   margin-bottom: 10rem;
   display: flex;
-  gap: 2rem;
+  gap: 6rem;
   flex-direction: column;
   color: #ffffff;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.8rem;
   letter-spacing: 1px;
   font-family: "Italiano";
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 1s ease;
+}
+.contact__data.slideInFromBottom {
+  opacity: 1;
+  transform: translateY(0);
 }
 .contact__form {
   margin-bottom: 10rem;
   border-radius: 12px;
-  width: 100%;
+  width: 120%;
   padding: 6rem 4rem;
   background: #efebe7;
   display: flex;
@@ -467,11 +498,14 @@
 }
 .contact__form--heading {
   font-family: "Italiano";
-  margin-bottom: 2rem;
-  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-align: center;
 }
 .contact__form--label {
   margin-bottom: 0.6rem;
+  margin-left: 1.4rem;
 }
 .contact__form--input {
   margin-bottom: 2rem;
@@ -634,7 +668,7 @@ body {
   font-family: "Roboto";
   border: none;
   display: inline-block;
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #7f7a75;
   padding: 1rem 2rem;
   text-transform: uppercase;

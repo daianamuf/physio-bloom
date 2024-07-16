@@ -6,6 +6,7 @@ function Prices() {
         <p>OWNER - Bianca Deceanu</p>
         <p>0747 486 770</p>
         <p>physiobloom@gmail.com</p>
+        <p>physiobloom@gmail.com</p>
       </div>
       <div className="contact__form"></div>
     </section>

@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import useElementIntersectionObserver from "../useElementIntersectionObserver";
 
 const initialState = {
   inputs: {
@@ -34,6 +35,11 @@ function Contact() {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [formKey, setFormKey] = useState(Date.now());
+
+  const { elementRef, isVisible } = useElementIntersectionObserver({
+    root: null,
+    treshold: 0.05,
+  });
 
   const validateInput = (id, value) => {
     let error = "";
@@ -144,7 +150,10 @@ function Contact() {
   return (
     <section className="contact">
       <div className="contact__hero"></div>
-      <div className="contact__data">
+      <div
+        className={`contact__data ${isVisible ? "slideInFromBottom" : ""}`}
+        ref={elementRef}
+      >
         <p>OWNER - Bianca Deceanu</p>
         <p>0747 486 770</p>
         <p>physiobloom@gmail.com</p>
@@ -167,7 +176,7 @@ function Contact() {
           onChange={handleChange}
         />
 
-        <label htmlFor="firstName" className="review__form--label">
+        <label htmlFor="firstName" className="contact__form--label">
           Prenume
           {state.errors.firstName && (
             <span className="error-message">{state.errors.firstName}</span>

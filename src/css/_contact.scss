@@ -1,5 +1,8 @@
 .contact {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__hero {
     position: absolute;
@@ -19,19 +22,28 @@
     margin-top: 40rem;
     margin-bottom: 10rem;
     display: flex;
-    gap: 2rem;
+    gap: 6rem;
     flex-direction: column;
     color: $cl-white;
     text-align: center;
     font-size: $font-medium;
     letter-spacing: 1px;
     font-family: "Italiano";
+
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 1s ease;
+
+    &.slideInFromBottom {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__form {
     margin-bottom: 10rem;
     border-radius: 12px;
-    width: 100%;
+    width: 120%;
     padding: 6rem 4rem;
     background: $cl-gray-light-2;
     display: flex;
@@ -40,12 +52,15 @@
 
     &--heading {
       font-family: "Italiano";
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       font-size: $font-medium;
+      font-weight: 300;
+      text-align: center;
     }
 
     &--label {
       margin-bottom: 0.6rem;
+      margin-left: 1.4rem;
     }
 
     &--input {
