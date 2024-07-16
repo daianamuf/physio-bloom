@@ -151,14 +151,23 @@ function Contact() {
     <section className="contact">
       <div className="contact__hero"></div>
       <div
-        className={`contact__data ${isVisible ? "slideInFromBottom" : ""}`}
+        className={`contact__info ${isVisible ? "slideInFromBottom" : ""}`}
         ref={elementRef}
       >
-        <p>OWNER - Bianca Deceanu</p>
-        <p>0747 486 770</p>
-        <p>physiobloom@gmail.com</p>
+        <div className="contact__data">
+          <p>OWNER - Bianca Deceanu</p>
+          <p>0747 486 770</p>
+          <p>physiobloom@gmail.com</p>
+        </div>
+        <p>Cluj-Napoca, str. Grigore Moisil, nr.12</p>
+        <img src="/assets/images/location.png" />
       </div>
-      <form className="contact__form" key={formKey} onSubmit={handleSubmit}>
+
+      <form
+        className={`contact__form ${isVisible ? "slideInFromBottom" : ""}`}
+        key={formKey}
+        onSubmit={handleSubmit}
+      >
         <h3 className="contact__form--heading">
           Rezervă o sesiune privată de pilates
         </h3>

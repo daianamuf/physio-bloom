@@ -451,7 +451,7 @@
 .contact {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 .contact__hero {
@@ -466,14 +466,15 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.contact__data {
-  margin: 0 auto;
+.contact__info {
+  width: 40%;
   margin-top: 40rem;
   margin-bottom: 10rem;
   display: flex;
-  gap: 6rem;
   flex-direction: column;
-  color: #ffffff;
+  gap: 1rem;
+  align-items: center;
+  color: #7f7a75;
   text-align: center;
   font-size: 2.8rem;
   letter-spacing: 1px;
@@ -482,19 +483,38 @@
   transform: translateY(20%);
   transition: all 1s ease;
 }
-.contact__data.slideInFromBottom {
+.contact__info.slideInFromBottom {
   opacity: 1;
   transform: translateY(0);
 }
+.contact__info img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.contact__data {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-bottom: 4rem;
+}
 .contact__form {
+  margin-top: 40rem;
   margin-bottom: 10rem;
   border-radius: 12px;
-  width: 120%;
+  width: 40%;
   padding: 6rem 4rem;
   background: #efebe7;
   display: flex;
   flex-direction: column;
   color: #726e69;
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 1s ease;
+}
+.contact__form.slideInFromBottom {
+  opacity: 1;
+  transform: translateY(0);
 }
 .contact__form--heading {
   font-family: "Italiano";
