@@ -36,7 +36,8 @@ const info = [
 function About() {
   const { elementRef, isVisible } = useElementIntersectionObserver({
     root: null,
-    treshold: 0.05,
+    treshold: 0.2,
+    rootMargin: "400px",
   });
 
   return (
