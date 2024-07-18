@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-function useElementIntersectionObserver({ root = null, threshold = 0.2 }) {
+function useElementIntersectionObserver({
+  root = null,
+  threshold = 0.2,
+  rootMargin = "0px",
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 
@@ -16,7 +20,7 @@ function useElementIntersectionObserver({ root = null, threshold = 0.2 }) {
             observer.unobserve(currentRef);
           }
         },
-        { root, threshold }
+        { root, threshold, rootMargin }
       );
 
       observer.observe(currentRef);
@@ -26,7 +30,7 @@ function useElementIntersectionObserver({ root = null, threshold = 0.2 }) {
         observer.disconnect();
       };
     }
-  }, []);
+  }, [root, threshold, rootMargin]);
 
   return { elementRef, isVisible };
 }

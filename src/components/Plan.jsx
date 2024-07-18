@@ -55,7 +55,7 @@ function Plan() {
           <p className="plan__step--text">{step.text}</p>
         </div>
       ))}
-      <Link to={"/contact"} className="plan__btn">
+      <Link to={"/contact"} className="link__btn">
         <span>Book your session</span>
       </Link>
     </section>

@@ -14,8 +14,113 @@
     background-attachment: fixed;
   }
 
+  &__info {
+    margin-top: 40rem;
+    margin-bottom: 10rem;
+    opacity: 0;
+    transform: translateY(20%);
+
+    transition: all 1s ease;
+
+    &.slideInFromBottom {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 30rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 5rem;
+      background: $cl-gray-dark;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: $font-medium;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+    color: $cl-dark;
+
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
   &__data {
     margin-top: 10rem;
-    height: 40rem;
+    margin-bottom: 12rem;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+
+    &::after {
+      content: "";
+      background: $cl-accent;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: -5rem;
+    }
+
+    &:nth-of-type(4)::after {
+      display: none;
+    }
+
+    &--section {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &--number {
+      position: absolute;
+      bottom: -3rem;
+      left: -5rem;
+      font-size: $font-number;
+      color: $cl-white;
+      z-index: 1;
+      font-family: "Italiano";
+    }
+
+    &--heading {
+      font-family: "Italiano";
+      text-transform: uppercase;
+      font-size: $font-medium;
+      z-index: 2;
+    }
+
+    &--price {
+      font-size: $font-medium;
+      font-style: italic;
+    }
+  }
+
+  &__details {
+    display: block;
+    line-height: 2;
+    text-align: center;
+    font-size: $font-medium;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: $cl-accent;
   }
 }

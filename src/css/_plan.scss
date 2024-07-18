@@ -35,7 +35,7 @@
       position: absolute;
       bottom: -5rem;
       left: -5rem;
-      font-size: 10rem;
+      font-size: $font-number;
       color: $cl-gray-light;
       z-index: 1;
       font-family: "Italiano";
@@ -61,36 +61,6 @@
       width: 30%;
       line-height: 1.2;
       letter-spacing: 0.8px;
-    }
-  }
-
-  &__btn {
-    margin-top: 6rem;
-    background: $cl-accent;
-    padding: 2rem;
-    text-decoration: none;
-    border-radius: 10px;
-
-    background-image: linear-gradient(
-      120deg,
-      transparent 0%,
-      transparent 50%,
-      $cl-gray-light 50%
-    );
-    background-size: 220%;
-    border-radius: 10px;
-    transition: all 0.8s;
-
-    &:hover {
-      background-position: 100%;
-      color: $cl-white;
-      transform: translateX(1rem);
-    }
-
-    & span {
-      color: $cl-white;
-      font-weight: 500;
-      letter-spacing: 1px;
     }
   }
 }
