@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import useElementIntersectionObserver from "../useElementIntersectionObserver";
 
 const pricesIndividual = [
@@ -44,6 +44,7 @@ const pricesDuo = [
 ];
 
 function Prices() {
+  const heroRef = useRef(null);
   const [individual, setIndividual] = useState(true);
   const [duo, setDuo] = useState(false);
 
@@ -52,9 +53,15 @@ function Prices() {
     treshold: 0.2,
   });
 
+  useEffect(() => {
+    if (heroRef.current) {
+      heroRef.current.style.setProperty("--hero-height", "100%");
+    }
+  }, []);
+
   return (
     <section className="prices">
-      <div className="prices__hero"></div>
+      <div className="prices__hero" ref={heroRef}></div>
       <div
         className={`prices__info ${isVisible ? "slideInFromBottom" : ""}`}
         ref={elementRef}

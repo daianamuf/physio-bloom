@@ -1,15 +1,23 @@
 .hero {
-  display: grid;
   margin: 0 auto;
   width: 70%;
-  grid-template-columns: repeat(6, 18rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-template-rows: repeat(2, 20rem);
   margin-bottom: 10rem;
+
+  @media (min-width: 1900px) {
+    width: 50%;
+  }
 
   &__heading {
     display: inline;
     font-size: 10rem;
     font-family: "Italiana";
+
+    @media (max-width: 1025px) {
+      font-size: $font-biggest;
+    }
 
     &--1 {
       display: inline;
@@ -34,6 +42,7 @@
       height: auto;
       border: 10px solid $cl-white;
       border-radius: 4px;
+      @include box-shadow;
     }
 
     &--1 {

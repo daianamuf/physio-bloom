@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import useElementIntersectionObserver from "../useElementIntersectionObserver";
 import Image from "../components/Image";
@@ -34,15 +35,22 @@ const info = [
 ];
 
 function About() {
+  const heroRef = useRef(null);
   const { elementRef, isVisible } = useElementIntersectionObserver({
     root: null,
     treshold: 0.2,
     rootMargin: "400px",
   });
 
+  useEffect(() => {
+    if (heroRef.current) {
+      heroRef.current.style.setProperty("--hero-height", "100%");
+    }
+  }, []);
+
   return (
     <section className="about">
-      <div className="about__hero"></div>
+      <div className="about__hero" ref={heroRef}></div>
 
       <div
         ref={elementRef}

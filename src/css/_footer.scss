@@ -55,6 +55,10 @@
       gap: 1.2rem;
       align-self: center;
 
+      @media (min-width: 1900px) {
+        align-self: start;
+      }
+
       transition-delay: 2s;
 
       & a {

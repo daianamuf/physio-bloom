@@ -10,7 +10,7 @@
     left: 0;
     display: block;
     width: 100%;
-    height: 50rem;
+    height: 70%;
     background: url("/assets/images/hero-contact.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -18,8 +18,11 @@
   }
 
   &__info {
+    @include marg-top-hero;
+    @include marg-top-hero-query;
+    @include initial-position;
+
     width: 40%;
-    margin-top: 40rem;
     margin-bottom: 10rem;
     display: flex;
     flex-direction: column;
@@ -32,10 +35,6 @@
     letter-spacing: 1px;
     font-family: "Italiano";
 
-    opacity: 0;
-    transform: translateY(20%);
-    transition: all 1s ease;
-
     &.slideInFromBottom {
       opacity: 1;
       transform: translateY(0);
@@ -45,42 +44,53 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
+      border: 6px solid $cl-white;
+      @include box-shadow;
     }
   }
 
   &__data {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 8rem;
     margin-bottom: 4rem;
+
+    & > * {
+      position: relative;
+
+      &::after {
+        content: "";
+        background: $cl-accent;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -3rem;
+        left: 0;
+      }
+
+      &:nth-of-type(4)::after {
+        display: none;
+      }
+    }
   }
 
   &__form {
-    margin-top: 40rem;
+    @include marg-top-hero;
+    @include marg-top-hero-query;
+    @include initial-position;
+
     margin-bottom: 10rem;
     border-radius: 12px;
-    width: 40%;
+    width: 35%;
     padding: 6rem 4rem;
     background: $cl-gray-light-2;
     display: flex;
     flex-direction: column;
     color: $cl-gray-dark-2;
 
-    opacity: 0;
-    transform: translateY(20%);
-    transition: all 1s ease;
-
     &.slideInFromBottom {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    &--heading {
-      font-family: "Italiano";
-      margin-bottom: 3rem;
-      font-size: $font-medium;
-      font-weight: 300;
-      text-align: center;
     }
 
     &--label {
@@ -116,6 +126,8 @@
       font-family: "Roboto";
       background: $cl-accent;
       color: $cl-gray-light-2;
+
+      @include box-shadow;
 
       background-image: linear-gradient(
         120deg,

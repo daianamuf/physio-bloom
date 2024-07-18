@@ -1,0 +1,19 @@
+@mixin box-shadow {
+  box-shadow: 0 1rem 3rem rgba($cl-dark, 0.15);
+}
+
+@mixin marg-top-hero {
+  margin-top: calc(var(--hero-height, 20%) + 10rem);
+}
+
+@mixin marg-top-hero-query {
+  @media (min-width: 1500px) {
+    margin-top: calc(var(--hero-height, 30%) + 14rem);
+  }
+}
+
+@mixin initial-position {
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all 1s ease-out;
+}

@@ -9,9 +9,7 @@
   background: $cl-white;
   padding-top: 6rem;
   padding-bottom: 5rem;
-  transform: translateY(20%);
-  opacity: 0;
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  @include initial-position;
 
   &.slideInFromBottom {
     opacity: 1;
