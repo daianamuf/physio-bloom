@@ -1,0 +1,113 @@
+.post {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &__mainImage {
+    width: 90%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 6px solid $cl-white;
+  }
+
+  &__heading {
+    font-size: $font-big;
+
+    &--secondary {
+      font-size: $font-medium;
+      align-self: flex-start;
+      margin-bottom: 2rem;
+      text-decoration: underline 2px;
+      padding-left: 2rem;
+    }
+
+    &--tertiary {
+      font-weight: 600;
+      align-self: flex-start;
+      text-decoration: underline 1px;
+      padding-left: 2rem;
+    }
+  }
+
+  &__img {
+    width: 40%;
+    border-radius: 8px;
+    margin-bottom: 1.8rem;
+  }
+
+  &__text {
+    font-size: $font-base;
+    width: 50rem;
+    align-self: flex-start;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+    font-size: $font-small;
+    font-style: italic;
+  }
+
+  &__content {
+    font-size: $font-base;
+    line-height: 1.2;
+    width: 75%;
+    margin-bottom: 1.4rem;
+  }
+
+  &__blockquote {
+    font-style: italic;
+    font-weight: 500;
+    width: 70%;
+  }
+
+  &__list {
+    align-self: flex-start;
+    padding-left: 6rem;
+
+    &--item {
+      margin-bottom: 1.1rem;
+    }
+  }
+
+  &__link {
+    color: $cl-accent;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  &__btn--back {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Roboto";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $font-medium;
+    color: $cl-gray-dark;
+    padding: 1rem 2rem;
+    background: $cl-white;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      $cl-accent 50%
+    );
+    background-size: 220%;
+    border-radius: 10px;
+    transition: all 0.8s;
+
+    &:hover {
+      background-position: 100%;
+      color: $cl-white;
+      transform: translateX(1rem);
+    }
+  }
+}

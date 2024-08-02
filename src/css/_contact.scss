@@ -1,26 +1,22 @@
 .contact {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+
+  @media (max-width: 900px) {
+    margin-top: -20rem;
+  }
 
   &__hero {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 70%;
-    background: url("/assets/images/hero-contact.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    @include hero-background("/assets/images/hero-contact.png");
   }
 
   &__info {
-    @include marg-top-hero;
-    @include marg-top-hero-query;
     @include initial-position;
+    padding-top: 8rem;
 
     width: 40%;
     margin-bottom: 10rem;
@@ -75,8 +71,6 @@
   }
 
   &__form {
-    @include marg-top-hero;
-    @include marg-top-hero-query;
     @include initial-position;
 
     margin-bottom: 10rem;

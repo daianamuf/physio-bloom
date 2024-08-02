@@ -5,23 +5,14 @@
   align-items: center;
 
   &__hero {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 60%;
-    background: url("/assets/images/hero-prices.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    @include hero-background("/assets/images/hero-prices.png");
   }
 
   &__info {
-    @include marg-top-hero;
-    @include initial-position;
-
+    padding-top: 8rem;
     margin-bottom: 10rem;
+
+    @include initial-position;
 
     &.slideInFromBottom {
       opacity: 1;
@@ -30,7 +21,6 @@
   }
 
   &__btns {
-    margin-top: -10rem;
     display: flex;
     gap: 30rem;
     position: relative;

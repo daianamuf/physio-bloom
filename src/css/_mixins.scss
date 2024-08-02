@@ -2,18 +2,39 @@
   box-shadow: 0 1rem 3rem rgba($cl-dark, 0.15);
 }
 
-@mixin marg-top-hero {
-  margin-top: calc(var(--hero-height, 20%) + 10rem);
-}
-
-@mixin marg-top-hero-query {
-  @media (min-width: 1500px) {
-    margin-top: calc(var(--hero-height, 30%) + 14rem);
-  }
-}
-
 @mixin initial-position {
   opacity: 0;
-  transform: translateY(10%);
+  transform: translateY(20%);
   transition: all 1s ease-out;
+}
+
+@mixin hero-background($image-url) {
+  position: relative;
+  width: 100vw;
+  padding-top: 80%;
+
+  margin-top: -28rem;
+
+  background: url(#{$image-url});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  height: auto;
+
+  @media (min-width: 1500px) {
+    padding-top: 50%;
+  }
+
+  @media (max-width: 1440px) {
+    padding-top: 60%;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 85%;
+  }
+
+  @media (max-width: 450px) {
+    padding-top: 110%;
+  }
 }

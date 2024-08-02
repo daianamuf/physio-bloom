@@ -8,12 +8,18 @@
   padding: 0rem 10rem;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
 
   @media (min-width: 1900px) {
     width: 80%;
     height: 14rem;
     margin: 0 auto;
+  }
+  @media (max-width: 850px) {
+    padding: 0rem 1rem;
+  }
+  @media (max-width: 650px) {
+    height: 6rem;
   }
 
   &__home {
@@ -21,6 +27,10 @@
     cursor: pointer;
     background: transparent;
     height: 9rem;
+
+    @media (max-width: 650px) {
+      height: 6rem;
+    }
 
     &--img img {
       width: 12rem;
@@ -31,6 +41,11 @@
       @media (min-width: 1900px) {
         width: 14rem;
         height: 14rem;
+      }
+
+      @media (max-width: 650px) {
+        height: 6rem;
+        width: 6rem;
       }
     }
 
@@ -73,6 +88,16 @@
     @media (min-width: 1900px) {
       right: 20%;
     }
+
+    @media (max-width: 850px) {
+      top: 3rem;
+      right: 6%;
+    }
+    @media (max-width: 650px) {
+      height: 4rem;
+      width: 4rem;
+      top: 1.5rem;
+    }
   }
 
   &__background {
@@ -88,6 +113,15 @@
 
     @media (min-width: 1900px) {
       right: 20.3%;
+    }
+    @media (max-width: 850px) {
+      top: 3rem;
+      right: 6.3%;
+    }
+    @media (max-width: 650px) {
+      height: 3.7rem;
+      width: 3.7rem;
+      top: 1.5rem;
     }
   }
 
@@ -164,6 +198,10 @@
     position: relative;
     margin-top: 3.5rem;
 
+    @media (max-width: 650px) {
+      margin-top: 2rem;
+    }
+
     &,
     &::before,
     &::after {
@@ -171,6 +209,10 @@
       height: 2px;
       background-color: $cl-gray-dark;
       display: inline-block;
+
+      @media (max-width: 650px) {
+        width: 2rem;
+      }
     }
 
     &::before,

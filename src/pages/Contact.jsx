@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useReducer, useState } from "react";
 import useElementIntersectionObserver from "../useElementIntersectionObserver";
 
 const initialState = {
@@ -32,7 +32,6 @@ function formReducer(state, action) {
 }
 
 function Contact() {
-  const heroRef = useRef(null);
   const [state, dispatch] = useReducer(formReducer, initialState);
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [formKey, setFormKey] = useState(Date.now());
@@ -41,12 +40,6 @@ function Contact() {
     root: null,
     treshold: 0.05,
   });
-
-  useEffect(() => {
-    if (heroRef.current) {
-      heroRef.current.style.setProperty("--hero-height", "100%");
-    }
-  }, []);
 
   const validateInput = (id, value) => {
     let error = "";
@@ -156,7 +149,7 @@ function Contact() {
 
   return (
     <section className="contact">
-      <div className="contact__hero" ref={heroRef}></div>
+      <div className="contact__hero"></div>
       <div
         className={`contact__info ${isVisible ? "slideInFromBottom" : ""}`}
         ref={elementRef}
