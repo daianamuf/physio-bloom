@@ -23,6 +23,11 @@
     justify-content: center;
     gap: 5rem;
 
+    @media (max-width: 460px) {
+      gap: 1rem;
+      width: 90%;
+    }
+
     &--section {
       display: flex;
       flex-direction: column;
@@ -37,6 +42,11 @@
       color: $cl-gray-light;
       z-index: 1;
       font-family: "Italiano";
+
+      @media (max-width: 460px) {
+        font-size: 8rem;
+        left: 3rem;
+      }
     }
 
     &.even {
@@ -46,6 +56,10 @@
     &--heading {
       font-family: "Italiano";
       z-index: 2;
+
+      @media (max-width: 460px) {
+        font-size: $font-base;
+      }
     }
 
     &--img img {
@@ -53,12 +67,23 @@
       width: 20rem;
       height: auto;
       z-index: 2;
+
+      @media (max-width: 460px) {
+        width: 12rem;
+      }
+      @media (max-width: 370px) {
+        width: 8rem;
+      }
     }
 
     &--text {
       width: 30%;
       line-height: 1.2;
       letter-spacing: 0.8px;
+
+      @media (max-width: 460px) {
+        width: 100%;
+      }
     }
   }
 }
