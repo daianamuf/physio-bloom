@@ -1,5 +1,5 @@
-import { Outlet, useNavigation } from "react-router-dom";
-import { lazy } from "react";
+import { Outlet, useLocation, useNavigation } from "react-router-dom";
+import { lazy, useEffect } from "react";
 
 import Loader from "./components/Loader";
 
@@ -9,6 +9,17 @@ const Footer = lazy(() => import("./components/Footer"));
 function AppLayout() {
   const navigation = useNavigation;
   const isLoading = navigation.state === "loading";
+
+  function useScrollToTop() {
+    const { pathname } = useLocation();
+    console.log(pathname);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  }
+
+  useScrollToTop();
 
   return (
     <div className="wrapper">
