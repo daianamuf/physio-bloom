@@ -12,7 +12,6 @@ function AppLayout() {
 
   function useScrollToTop() {
     const { pathname } = useLocation();
-    console.log(pathname);
 
     useEffect(() => {
       window.scrollTo(0, 0);
