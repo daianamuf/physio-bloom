@@ -6,7 +6,7 @@
   justify-content: center;
 
   &__hero {
-    @include hero-background("/assets/images/hero-prices.png");
+    @include hero-background("/assets/images/hero-prices2.png");
   }
 
   &__info {
@@ -29,6 +29,7 @@
     display: flex;
     gap: 30rem;
     position: relative;
+    margin-top: 3rem;
 
     @media (max-width: 850px) {
       gap: 13rem;

@@ -6,12 +6,8 @@
   align-items: center;
   position: relative;
 
-  @media (max-width: 900px) {
-    margin-top: -20rem;
-  }
-
   &__hero {
-    @include hero-background("/assets/images/hero-contact.png");
+    @include hero-background("/assets/images/hero-contact2.png");
   }
 
   &__info {

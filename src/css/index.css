@@ -740,17 +740,12 @@
   align-items: center;
   position: relative;
 }
-@media (max-width: 900px) {
-  .contact {
-    margin-top: -20rem;
-  }
-}
 .contact__hero {
   position: relative;
   width: 100vw;
   padding-top: 80%;
   margin-top: -28rem;
-  background: url(/assets/images/hero-contact.png);
+  background: url(/assets/images/hero-contact2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -769,10 +764,25 @@
 }
 @media (max-width: 650px) {
   .contact__hero {
+    padding-top: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .contact__hero {
     padding-top: 85%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 470px) {
+  .contact__hero {
+    padding-top: 80%;
+  }
+}
+@media (max-width: 410px) {
+  .contact__hero {
+    padding-top: 90%;
+  }
+}
+@media (max-width: 318px) {
   .contact__hero {
     padding-top: 110%;
   }
@@ -953,10 +963,25 @@
 }
 @media (max-width: 650px) {
   .about__hero {
+    padding-top: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .about__hero {
     padding-top: 85%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 470px) {
+  .about__hero {
+    padding-top: 80%;
+  }
+}
+@media (max-width: 410px) {
+  .about__hero {
+    padding-top: 90%;
+  }
+}
+@media (max-width: 318px) {
   .about__hero {
     padding-top: 110%;
   }
@@ -1064,7 +1089,7 @@
   width: 100vw;
   padding-top: 80%;
   margin-top: -28rem;
-  background: url(/assets/images/hero-prices.png);
+  background: url(/assets/images/hero-prices2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1083,10 +1108,25 @@
 }
 @media (max-width: 650px) {
   .prices__hero {
+    padding-top: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .prices__hero {
     padding-top: 85%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 470px) {
+  .prices__hero {
+    padding-top: 80%;
+  }
+}
+@media (max-width: 410px) {
+  .prices__hero {
+    padding-top: 90%;
+  }
+}
+@media (max-width: 318px) {
   .prices__hero {
     padding-top: 110%;
   }
@@ -1111,6 +1151,7 @@
   display: flex;
   gap: 30rem;
   position: relative;
+  margin-top: 3rem;
 }
 @media (max-width: 850px) {
   .prices__btns {
@@ -1243,7 +1284,7 @@
   width: 100vw;
   padding-top: 80%;
   margin-top: -28rem;
-  background: url(/assets/images/hero-blog.png);
+  background: url(/assets/images/hero-blog2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1262,10 +1303,25 @@
 }
 @media (max-width: 650px) {
   .blog__hero {
+    padding-top: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .blog__hero {
     padding-top: 85%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 470px) {
+  .blog__hero {
+    padding-top: 80%;
+  }
+}
+@media (max-width: 410px) {
+  .blog__hero {
+    padding-top: 90%;
+  }
+}
+@media (max-width: 318px) {
   .blog__hero {
     padding-top: 110%;
   }
