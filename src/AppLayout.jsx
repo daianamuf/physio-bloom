@@ -1,5 +1,5 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 
 import Loader from "./components/Loader";
 
@@ -12,18 +12,15 @@ function AppLayout() {
 
   return (
     <div className="wrapper">
-      <Suspense fallback={<Loader />}>
-        <Nav />
-      </Suspense>
+      <Nav />
+
       {isLoading && <Loader />}
 
       <main>
         <Outlet />
       </main>
 
-      <Suspense fallback={<Loader />}>
-        <Footer />
-      </Suspense>
+      <Footer />
     </div>
   );
 }

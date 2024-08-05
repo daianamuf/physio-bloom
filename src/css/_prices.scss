@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   &__hero {
     @include hero-background("/assets/images/hero-prices.png");
@@ -11,6 +12,10 @@
   &__info {
     padding-top: 8rem;
     margin-bottom: 10rem;
+
+    @media (max-width: 620px) {
+      padding-top: 0;
+    }
 
     @include initial-position;
 
@@ -24,6 +29,14 @@
     display: flex;
     gap: 30rem;
     position: relative;
+
+    @media (max-width: 850px) {
+      gap: 13rem;
+      justify-content: center;
+    }
+    @media (max-width: 450px) {
+      gap: 6rem;
+    }
 
     &::after {
       content: "";
@@ -46,6 +59,10 @@
     letter-spacing: 1px;
     color: $cl-dark;
 
+    @media (max-width: 450px) {
+      width: 10rem;
+    }
+
     transition: all 0.4s ease;
 
     &:hover {
@@ -63,6 +80,15 @@
     justify-content: center;
     gap: 6rem;
 
+    @media (max-width: 620px) {
+      gap: 3rem;
+    }
+    @media (max-width: 450px) {
+      flex-direction: column;
+      width: 90%;
+      margin-left: auto;
+    }
+
     &::after {
       content: "";
       background: $cl-accent;
@@ -70,6 +96,10 @@
       height: 1px;
       position: absolute;
       bottom: -5rem;
+
+      @media (max-width: 620px) {
+        width: 80%;
+      }
     }
 
     &:nth-of-type(4)::after {
@@ -90,6 +120,10 @@
       color: $cl-white;
       z-index: 1;
       font-family: "Italiano";
+
+      @media (max-width: 620px) {
+        font-size: $font-number-small;
+      }
     }
 
     &--heading {
@@ -114,5 +148,11 @@
     font-weight: 500;
     letter-spacing: 1px;
     color: $cl-accent;
+
+    @media (max-width: 450px) {
+      font-size: $font-base;
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 }

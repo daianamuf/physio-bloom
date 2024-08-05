@@ -44,7 +44,7 @@
       font-family: "Italiano";
 
       @media (max-width: 460px) {
-        font-size: 8rem;
+        font-size: $font-number-small;
         left: 3rem;
       }
     }

@@ -16,9 +16,8 @@
 
   &__info {
     @include initial-position;
-    padding-top: 8rem;
 
-    width: 40%;
+    width: 50%;
     margin-bottom: 10rem;
     display: flex;
     flex-direction: column;
@@ -30,6 +29,19 @@
     font-size: $font-medium;
     letter-spacing: 1px;
     font-family: "Italiano";
+
+    @media (min-width: 1500px) {
+      width: 80%;
+      gap: 3rem;
+      font-size: $font-biggest;
+    }
+    @media (max-width: 950px) {
+      width: 80%;
+      padding-top: 6rem;
+    }
+    @media (max-width: 425px) {
+      width: 90%;
+    }
 
     &.slideInFromBottom {
       opacity: 1;
@@ -82,6 +94,18 @@
     flex-direction: column;
     color: $cl-gray-dark-2;
 
+    @media (min-width: 1500px) {
+      width: 50%;
+      font-size: $font-medium;
+    }
+    @media (max-width: 950px) {
+      width: 80%;
+    }
+    @media (max-width: 425px) {
+      width: 90%;
+      padding: 3rem;
+    }
+
     &.slideInFromBottom {
       opacity: 1;
       transform: translateY(0);
@@ -101,6 +125,10 @@
       font-size: $font-base;
       color: $cl-gray-dark-2;
       background: $cl-white;
+
+      @media (min-width: 1500px) {
+        font-size: $font-medium;
+      }
 
       &:focus {
         outline: 1px solid $cl-gray-dark;
