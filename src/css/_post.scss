@@ -7,16 +7,32 @@
   align-items: center;
   margin-bottom: 4rem;
 
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+  @media (max-width: 950px) {
+    width: 95%;
+  }
+
   &__mainImage {
     width: 90%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: 8px;
     border: 6px solid $cl-white;
+
+    @media (max-width: 350px) {
+      aspect-ratio: 4/5;
+      width: 95%;
+    }
   }
 
   &__heading {
     font-size: $font-big;
+
+    @media (min-width: 1600px) {
+      font-size: $font-biggest;
+    }
 
     &--secondary {
       font-size: $font-medium;
@@ -24,6 +40,10 @@
       margin-bottom: 2rem;
       text-decoration: underline 2px;
       padding-left: 2rem;
+
+      @media (min-width: 1600px) {
+        font-size: $font-big;
+      }
     }
 
     &--tertiary {
@@ -31,6 +51,10 @@
       align-self: flex-start;
       text-decoration: underline 1px;
       padding-left: 2rem;
+
+      @media (min-width: 1600px) {
+        font-size: $font-medium;
+      }
     }
   }
 
@@ -38,6 +62,10 @@
     width: 40%;
     border-radius: 8px;
     margin-bottom: 1.8rem;
+
+    @media (max-width: 700px) {
+      width: 60%;
+    }
   }
 
   &__text {
@@ -48,6 +76,16 @@
     margin-bottom: 2rem;
     font-size: $font-small;
     font-style: italic;
+
+    @media (min-width: 1600px) {
+      font-size: $font-medium;
+      padding-left: 10rem;
+      margin-bottom: 6rem;
+    }
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
   }
 
   &__content {
@@ -55,20 +93,39 @@
     line-height: 1.2;
     width: 75%;
     margin-bottom: 1.4rem;
+
+    @media (min-width: 1600px) {
+      font-size: $font-medium;
+    }
+
+    @media (max-width: 700px) {
+      width: 95%;
+    }
   }
 
   &__blockquote {
     font-style: italic;
     font-weight: 500;
     width: 70%;
+
+    @media (min-width: 1600px) {
+      font-size: $font-medium;
+    }
+    @media (max-width: 700px) {
+      width: 90%;
+    }
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.1rem;
     align-self: flex-start;
     padding-left: 6rem;
 
-    &--item {
-      margin-bottom: 1.1rem;
+    @media (min-width: 1600px) {
+      font-size: $font-medium;
     }
   }
 
@@ -76,6 +133,10 @@
     color: $cl-accent;
     text-decoration: none;
     font-weight: 500;
+
+    @media (min-width: 1600px) {
+      font-size: $font-medium;
+    }
 
     &:hover,
     &:active {
