@@ -156,8 +156,8 @@ function Contact() {
       >
         <div className="contact__data">
           <p>OWNER - Bianca Deceanu</p>
-          <p>0747 486 770</p>
-          <p>physiobloom@gmail.com</p>
+          <p>0755 854 049</p>
+          <p>biancadeceanu@yahoo.com</p>
         </div>
         <p>Cluj-Napoca, str. Grigore Moisil, nr.12</p>
         <img src="/assets/images/location.png" />
