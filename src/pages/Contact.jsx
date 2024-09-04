@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import useElementIntersectionObserver from "../useElementIntersectionObserver";
+import { Helmet } from "react-helmet-async";
 
 const initialState = {
   inputs: {
@@ -148,103 +149,119 @@ function Contact() {
   };
 
   return (
-    <section className="contact">
-      <div className="contact__hero"></div>
-      <div
-        className={`contact__info ${isVisible ? "slideInFromBottom" : ""}`}
-        ref={elementRef}
-      >
-        <div className="contact__data">
-          <p>OWNER - Bianca Deceanu</p>
-          <p>0755 854 049</p>
-          <p>biancadeceanu@yahoo.com</p>
+    <>
+      <Helmet>
+        <title>
+          Contact PhysioBloom - Programări la Recuperare și Pilates în Cluj
+        </title>
+        <meta
+          name="description"
+          content="Contactează PhysioBloom, studio de recuperare medicală și pilates în Cluj, România, pentru programări la pilates clinic, pre și post-natal, Peak Pilates și recuperare medicală."
+        />
+        <meta
+          name="keywords"
+          content="PhysioBloom, contact, programări, recuperare medicală, pilates clinic, Peak Pilates, Cluj, Cluj-Napoca, pilates, kinetoterapie, kineto"
+        />
+      </Helmet>
+
+      <section className="contact">
+        <div className="contact__hero"></div>
+        <div
+          className={`contact__info ${isVisible ? "slideInFromBottom" : ""}`}
+          ref={elementRef}
+        >
+          <div className="contact__data">
+            <p>OWNER - Bianca Deceanu</p>
+            <p>0755 854 049</p>
+            <p>biancadeceanu@yahoo.com</p>
+          </div>
+          <p>Cluj-Napoca, str. Grigore Moisil, nr.12</p>
+          <img src="/assets/images/location.png" />
         </div>
-        <p>Cluj-Napoca, str. Grigore Moisil, nr.12</p>
-        <img src="/assets/images/location.png" />
-      </div>
 
-      <form
-        className={`contact__form ${isVisible ? "slideInFromBottom" : ""}`}
-        key={formKey}
-        onSubmit={handleSubmit}
-      >
-        <label htmlFor="lastName" className="contact__form--label">
-          Nume
-          {state.errors.lastName && (
-            <span className="error-message">{state.errors.lastName}</span>
+        <form
+          className={`contact__form ${isVisible ? "slideInFromBottom" : ""}`}
+          key={formKey}
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="lastName" className="contact__form--label">
+            Nume
+            {state.errors.lastName && (
+              <span className="error-message">{state.errors.lastName}</span>
+            )}
+          </label>
+          <input
+            id="lastName"
+            type="text"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+
+          <label htmlFor="firstName" className="contact__form--label">
+            Prenume
+            {state.errors.firstName && (
+              <span className="error-message">{state.errors.firstName}</span>
+            )}
+          </label>
+          <input
+            id="firstName"
+            type="text"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+
+          <label htmlFor="email" className="contact__form--label">
+            Email
+            {state.errors.email && (
+              <span className="error-message">{state.errors.email}</span>
+            )}
+          </label>
+          <input
+            id="email"
+            type="email"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+
+          <label htmlFor="phoneNumber" className="contact__form--label">
+            Telefon
+            {state.errors.phoneNumber && (
+              <span className="error-message">{state.errors.phoneNumber}</span>
+            )}
+          </label>
+          <input
+            id="phoneNumber"
+            className="contact__form--input"
+            autoComplete="true"
+            onChange={handleChange}
+          />
+
+          <label htmlFor="message" className="contact__form--label">
+            Mesaj
+            {state.errors.message && (
+              <span className="error-message">{state.errors.message}</span>
+            )}
+          </label>
+          <textarea
+            id="message"
+            type="text"
+            className="contact__form--input"
+            onChange={handleChange}
+            rows={10}
+          />
+
+          <button type="submit" className="contact__form--btn">
+            Trimite
+          </button>
+          {submissionMessage && (
+            <div className="submission-message">{submissionMessage}</div>
           )}
-        </label>
-        <input
-          id="lastName"
-          type="text"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
-        />
-
-        <label htmlFor="firstName" className="contact__form--label">
-          Prenume
-          {state.errors.firstName && (
-            <span className="error-message">{state.errors.firstName}</span>
-          )}
-        </label>
-        <input
-          id="firstName"
-          type="text"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
-        />
-
-        <label htmlFor="email" className="contact__form--label">
-          Email
-          {state.errors.email && (
-            <span className="error-message">{state.errors.email}</span>
-          )}
-        </label>
-        <input
-          id="email"
-          type="email"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
-        />
-
-        <label htmlFor="phoneNumber" className="contact__form--label">
-          Telefon
-          {state.errors.phoneNumber && (
-            <span className="error-message">{state.errors.phoneNumber}</span>
-          )}
-        </label>
-        <input
-          id="phoneNumber"
-          className="contact__form--input"
-          autoComplete="true"
-          onChange={handleChange}
-        />
-
-        <label htmlFor="message" className="contact__form--label">
-          Mesaj
-          {state.errors.message && (
-            <span className="error-message">{state.errors.message}</span>
-          )}
-        </label>
-        <textarea
-          id="message"
-          type="text"
-          className="contact__form--input"
-          onChange={handleChange}
-          rows={10}
-        />
-
-        <button type="submit" className="contact__form--btn">
-          Trimite
-        </button>
-        {submissionMessage && (
-          <div className="submission-message">{submissionMessage}</div>
-        )}
-      </form>
-    </section>
+        </form>
+      </section>
+    </>
   );
 }
 

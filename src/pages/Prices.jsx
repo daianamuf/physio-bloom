@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useElementIntersectionObserver from "../useElementIntersectionObserver";
+import { Helmet } from "react-helmet-async";
 
 const pricesIndividual = [
   {
@@ -53,62 +54,78 @@ function Prices() {
   });
 
   return (
-    <section className="prices">
-      <div className="prices__hero"></div>
-      <div
-        className={`prices__info ${isVisible ? "slideInFromBottom" : ""}`}
-        ref={elementRef}
-      >
-        <div className="prices__btns">
-          <button
-            className={`prices__btn ${individual ? "selected" : ""}`}
-            onClick={() => {
-              setIndividual(true);
-              setDuo(false);
-            }}
-          >
-            Ședință privată
-          </button>
+    <>
+      <Helmet>
+        <title>
+          PhysioBloom - Tarife pentru Recuperare Medicală și Pilates în Cluj
+        </title>
+        <meta
+          name="description"
+          content="Descoperă tarifele PhysioBloom pentru servicii de recuperare medicală și pilates în Cluj-Napoca. Oferim pilates pre și post-natal, pilates clinic și Peak Pilates la prețuri accesibile."
+        />
+        <meta
+          name="keywords"
+          content="PhysioBloom, tarife recuperare medicală, pilates pre și post-natal, pilates clinic, Peak Pilates, Cluj"
+        />
+      </Helmet>
 
-          <button
-            className={`prices__btn ${duo ? "selected" : ""}`}
-            onClick={() => {
-              setDuo(true);
-              setIndividual(false);
-            }}
-          >
-            Ședință duo
-          </button>
-        </div>
+      <section className="prices">
+        <div className="prices__hero"></div>
+        <div
+          className={`prices__info ${isVisible ? "slideInFromBottom" : ""}`}
+          ref={elementRef}
+        >
+          <div className="prices__btns">
+            <button
+              className={`prices__btn ${individual ? "selected" : ""}`}
+              onClick={() => {
+                setIndividual(true);
+                setDuo(false);
+              }}
+            >
+              Ședință privată
+            </button>
 
-        {individual &&
-          pricesIndividual.map((el) => (
-            <div key={el.id} className="prices__data">
-              <div className="prices__data--section">
-                <h3 className="prices__data--heading">{el.type}</h3>
-                <p className="prices__data--number">{el.number}</p>
+            <button
+              className={`prices__btn ${duo ? "selected" : ""}`}
+              onClick={() => {
+                setDuo(true);
+                setIndividual(false);
+              }}
+            >
+              Ședință duo
+            </button>
+          </div>
+
+          {individual &&
+            pricesIndividual.map((el) => (
+              <div key={el.id} className="prices__data">
+                <div className="prices__data--section">
+                  <h3 className="prices__data--heading">{el.type}</h3>
+                  <p className="prices__data--number">{el.number}</p>
+                </div>
+                <p className="prices__data--price">{el.price} LEI</p>
               </div>
-              <p className="prices__data--price">{el.price} LEI</p>
-            </div>
-          ))}
+            ))}
 
-        {duo &&
-          pricesDuo.map((el) => (
-            <div key={el.id} className="prices__data">
-              <div className="prices__data--section">
-                <h3 className="prices__data--heading">{el.type}</h3>
-                <p className="prices__data--number">{el.number}</p>
+          {duo &&
+            pricesDuo.map((el) => (
+              <div key={el.id} className="prices__data">
+                <div className="prices__data--section">
+                  <h3 className="prices__data--heading">{el.type}</h3>
+                  <p className="prices__data--number">{el.number}</p>
+                </div>
+                <p className="prices__data--price">{el.price} LEI</p>
               </div>
-              <p className="prices__data--price">{el.price} LEI</p>
-            </div>
-          ))}
+            ))}
 
-        <div className="prices__details">
-          <p>1 ședință = 50 minute</p>
-          <p>Abonamentele au valabilitate 4, respectiv 6 săptămâni.</p>
+          <div className="prices__details">
+            <p>1 ședință = 50 minute</p>
+            <p>Abonamentele au valabilitate 4, respectiv 6 săptămâni.</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

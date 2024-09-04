@@ -4,6 +4,7 @@ import { Suspense, lazy } from "react";
 import AppLayout from "./AppLayout";
 import Error from "./components/Error";
 import Loader from "./components/Loader";
+import { HelmetProvider } from "react-helmet-async";
 
 const Homepage = lazy(() => import("./pages/Homepage"));
 const About = lazy(() => import("./pages/About"));
@@ -70,7 +71,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  );
 }
 
 export default App;

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useElementIntersectionObserver from "../useElementIntersectionObserver";
 import Image from "../components/Image";
+import { Helmet } from "react-helmet-async";
 
 const info = [
   {
@@ -40,33 +41,49 @@ function About() {
   });
 
   return (
-    <section className="about">
-      <div className="about__hero"></div>
+    <>
+      <Helmet>
+        <title>
+          Despre PhysioBloom - Studio de Recuperare și Pilates în Cluj
+        </title>
+        <meta
+          name="description"
+          content="Află mai multe despre PhysioBloom, un studio de recuperare medicală și pilates în Cluj-Napoca, România. Oferim pilates pre și post-natal, pilates clinic și Peak Pilates."
+        />
+        <meta
+          name="keywords"
+          content="PhysioBloom, studio recuperare medicală, pilates pre și post-natal, pilates clinic, Peak Pilates, Cluj, România, Cluj-Napoca, pilates, kinetoterapie, kineto"
+        />
+      </Helmet>
 
-      <div
-        ref={elementRef}
-        className={`about__section ${isVisible ? "slideInFromBottom" : ""}`}
-      >
-        {info.map((el, index) => (
-          <div
-            className={`about__info ${index % 2 === 0 ? "odd" : "even"}`}
-            data-index={index}
-            key={el.id}
-          >
-            <div className="about__data">
-              <p className="about__data--number">{el.number}</p>
-              <h3 className="about__data--heading">{el.title}</h3>
-              <p className="about__data--text">{el.text}</p>
+      <section className="about">
+        <div className="about__hero"></div>
+
+        <div
+          ref={elementRef}
+          className={`about__section ${isVisible ? "slideInFromBottom" : ""}`}
+        >
+          {info.map((el, index) => (
+            <div
+              className={`about__info ${index % 2 === 0 ? "odd" : "even"}`}
+              data-index={index}
+              key={el.id}
+            >
+              <div className="about__data">
+                <p className="about__data--number">{el.number}</p>
+                <h3 className="about__data--heading">{el.title}</h3>
+                <p className="about__data--text">{el.text}</p>
+              </div>
+              <Image className="about__img" src={el.image} alt="" />
             </div>
-            <Image className="about__img" src={el.image} alt="" />
-          </div>
-        ))}
+          ))}
 
-        <Link to={"/blog"} className="link__btn">
-          <span>Descoperă mai mult</span>
-        </Link>
-      </div>
-    </section>
+          <Link to={"/blog"} className="link__btn">
+            <span>Descoperă mai mult</span>
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
 
