@@ -6,6 +6,8 @@ const Hero = lazy(() => import("../components/Hero"));
 const Plan = lazy(() => import("../components/Plan"));
 
 function Homepage() {
+  const canonicalUrl = "https://physiobloom.ro/";
+
   return (
     <>
       <Helmet>
@@ -20,6 +22,7 @@ function Homepage() {
           name="keywords"
           content="PhysioBloom, recuperare medicală, pilates pre și post-natal, pilates clinic, Peak Pilates, terapie fizică, Cluj, Cluj-Napoca, România, pilates, kinetoterapie, kineto"
         />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <div>
         <Suspense fallback={<Loader />}>

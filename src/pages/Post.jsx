@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../utils/sanityClient";
+import { Helmet } from "react-helmet-async";
 
 const SampleImageComponent = ({ value }) => {
   return (
@@ -105,34 +106,50 @@ function Post() {
   if (isLoading) return <Loader />;
   if (!post) return <div>Post not found</div>;
 
+  const canonicalUrl = `https://physiobloom.ro/blog/${post.slug}`;
+
   return (
-    <section className="post">
-      <article className="post slideFromLeft">
-        {post.mainImageUrl ? (
-          <img
-            src={post.mainImageUrl}
-            alt={post.title || "Main Image"}
-            className="post__mainImage"
-          />
-        ) : (
-          <div>No main image available</div>
-        )}
-        <h1 className="post__heading">{post.title}</h1>
-        <div className="post__text">
-          <p className="post__info">
-            {post.author}, {formatDate(post.publishedAt)}
-          </p>
-        </div>
-        {post.body ? (
-          <PortableText value={post.body} components={components} />
-        ) : (
-          <div>Conținutul nu este disponibil</div>
-        )}
-        <Link to="/blog" className="post__btn--back">
-          Înapoi
-        </Link>
-      </article>
-    </section>
+    <>
+      <Helmet>
+        <title>{post.title} | PhysioBloom Blog</title>
+        <meta
+          name="description"
+          content={`Află mai multe despre ${post.title}, scris de ${post.author}. `}
+        />
+        <meta
+          name="keywords"
+          content="PhysioBloom, recuperare medicală, pilates pre și post-natal, pilates clinic, Peak Pilates, terapie fizică, Cluj, Cluj-Napoca, România, pilates, kinetoterapie, kineto"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
+      <section className="post">
+        <article className="post slideFromLeft">
+          {post.mainImageUrl ? (
+            <img
+              src={post.mainImageUrl}
+              alt={post.title || "Main Image"}
+              className="post__mainImage"
+            />
+          ) : (
+            <div>No main image available</div>
+          )}
+          <h1 className="post__heading">{post.title}</h1>
+          <div className="post__text">
+            <p className="post__info">
+              {post.author}, {formatDate(post.publishedAt)}
+            </p>
+          </div>
+          {post.body ? (
+            <PortableText value={post.body} components={components} />
+          ) : (
+            <div>Conținutul nu este disponibil</div>
+          )}
+          <Link to="/blog" className="post__btn--back">
+            Înapoi
+          </Link>
+        </article>
+      </section>
+    </>
   );
 }
 

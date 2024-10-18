@@ -16,6 +16,7 @@ const breakpointColumnsObj = {
 function Blog() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const canonicalUrl = "https://physiobloom.ro/blog";
 
   const { elementRef, isVisible } = useElementIntersectionObserver({
     root: null,
@@ -73,6 +74,7 @@ function Blog() {
           name="keywords"
           content="PhysioBloom, blog, recuperare medicală, pilates clinic, pre și post-natal, Peak Pilates, Cluj, Cluj-Napoca, pilates"
         />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
       <section className="blog">

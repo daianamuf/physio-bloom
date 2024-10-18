@@ -47,6 +47,7 @@ const pricesDuo = [
 function Prices() {
   const [individual, setIndividual] = useState(true);
   const [duo, setDuo] = useState(false);
+  const canonicalUrl = "https://physiobloom.ro/tarife";
 
   const { elementRef, isVisible } = useElementIntersectionObserver({
     root: null,
@@ -67,6 +68,7 @@ function Prices() {
           name="keywords"
           content="PhysioBloom, tarife recuperare medicală, pilates pre și post-natal, pilates clinic, Peak Pilates, Cluj"
         />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
       <section className="prices">

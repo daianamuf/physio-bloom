@@ -36,6 +36,7 @@ function Contact() {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [formKey, setFormKey] = useState(Date.now());
+  const canonicalUrl = "https://physiobloom.ro/contact";
 
   const { elementRef, isVisible } = useElementIntersectionObserver({
     root: null,
@@ -162,6 +163,7 @@ function Contact() {
           name="keywords"
           content="PhysioBloom, contact, programări, recuperare medicală, pilates clinic, Peak Pilates, Cluj, Cluj-Napoca, pilates, kinetoterapie, kineto"
         />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
       <section className="contact">
