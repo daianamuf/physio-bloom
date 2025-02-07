@@ -123,7 +123,7 @@ function Contact() {
         formData.append(key, value);
       });
       // CHANGE ACCESS KEY!!! //////////////
-      formData.append("access_key", "be6eeaf9-8feb-4de2-be37-79c3273c0ada");
+      formData.append("access_key", "1632ced3-4c8d-4ad0-8051-c35f2dec3508");
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -175,7 +175,7 @@ function Contact() {
           <div className="contact__data">
             <p>OWNER - Bianca Deceanu</p>
             <p>0755 854 049</p>
-            <p>biancadeceanu@yahoo.com</p>
+            <p>biancadeceanu99@gmail.com</p>
           </div>
           <p>Cluj-Napoca, str. Grigore Moisil, nr.12</p>
           <img src="/assets/images/location.png" />
