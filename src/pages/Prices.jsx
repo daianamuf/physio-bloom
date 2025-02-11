@@ -7,19 +7,19 @@ const pricesIndividual = [
     id: 1,
     number: "01",
     type: "ședință privată",
-    price: "90",
+    price: "130",
   },
   {
     id: 2,
     number: "02",
     type: "abonament 4 ședințe",
-    price: "340",
+    price: "480",
   },
   {
     id: 3,
     number: "03",
     type: "abonament 8 ședințe",
-    price: "660",
+    price: "880",
   },
 ];
 
@@ -28,19 +28,19 @@ const pricesDuo = [
     id: 1,
     number: "01",
     type: "ședință duo",
-    price: "70",
+    price: "100",
   },
   {
     id: 2,
     number: "02",
     type: "abonament 4 ședințe",
-    price: "250",
+    price: "360",
   },
   {
     id: 3,
     number: "03",
     type: "abonament 8 ședințe",
-    price: "480",
+    price: "680",
   },
 ];
 
